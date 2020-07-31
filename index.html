@@ -1,130 +1,165 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
         <head>
-        <title></title>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta charset="UTF-8">	
-        <!-- Font -->
-        <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
-        <!-- Stylesheets -->
-        <link href="/plugin-frameworks/bootstrap.min.css" rel="stylesheet">
-        <link href="/plugin-frameworks/swiper.css" rel="stylesheet">
-        <link href="/fonts/ionicons.css" rel="stylesheet">
-        <link href="/common/styles.css" rel="stylesheet">
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>terry.latanville.ca</title>
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
     </head>
-    <body>
-        <header>
-            <!-- <a class="logo" href="#"><img src="/images/terry-latanville-ca.png" alt="terry-latanville-ca"></a> -->
-            <a class="menu-nav-icon" data-menu="#main-menu" href="#"><i class="ion-navicon"></i></a>
-            <ul class="main-menu" id="main-menu">
-                <li><a href="/index.html">Home</a></li>
-                <li class="drop-down"><a href="#!">Posts<i class="ion-arrow-down-b"></i></a>
-                    <ul class="drop-down-menu drop-down-inner">
-                        <li><a href="/posts/hello-world.html">Hello World</a></li>
-                        
+    <body id="page-top">
+        <!-- Navigation-->
+                <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="#page-top">terry.latanville.ca</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#articles">Articles</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Projects</a></li>
                     </ul>
-                </li>
-                <li class="drop-down"><a href="#!">Projects<i class="ion-arrow-down-b"></i></a>
-                    <ul class="drop-down-menu drop-down-inner">
-                        <li><a href="https://github.com/RndmTsk/exercism">Coding Exercises</a></li>
-                        <li><a href="https://github.com/RndmTsk/GLSLVisualizer-iOS">iOS OpenGL Toy</a></li>
-                        <li><a href="https://github.com/RndmTsk/SwiftMySQLClient">Swift MySQL</a></li>
-                        
-                    </ul>
-                </li>
-                <!-- <li><a href="/about.html">About</a></li> -->
-            </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+                <header class="masthead">
+            <div class="container d-flex h-100 align-items-center">
+                <div class="mx-auto text-center">
+                    <!-- <h1 class="mx-auto my-0 text-uppercase">Grayscale</h1> -->
+                    <h2 class="text-white-50 mx-auto mt-2 mb-5">
+                        ... abc
+                        <!-- <ul style="list-style: none;">
+                            <li>Seasoned Developer</li>
+                            <li>﹒</li>
+                            <li></li>
+                            <li>﹒</li>
+                            <li>Swift Evangelist</li>
+                        </ul> -->
+                    </h2>
+                </div>
+            </div>
         </header>
-
-        <!-- Most recent story -->
-        <div class="slider-main h-800x h-sm-auto pos-relative pt-95 pb-25">
-            <div class="img-bg bg-1 bg-layer-4"></div>
-            <div class="container-fluid h-100 mt-xs-50">
-                <div class="row h-100">
-                    <div class="col-md-1"></div>
-                    <div class="col-sm-12 col-md-5 h-100 h-sm-50">
-                        <div class="dplay-tbl">
-                            <div class="dplay-tbl-cell color-md-black mtb-30">
-                                <div>
-                                    <h5><b>BLOG</b></h5>
-                                    <h1 class="mt-20 mb-30"><b>Hello World</b></h1>
-                                    <h6>It's been quite a journey: from paid hosting, to Google Cloud compute instances, to Wordpress free hosting, finally to GitHub &mdash; this site has been a while in the making. It's my hope that you enjoy reading my articles as much as I enjoy writing them.<br /><br />This site is dedicated to Swift examples &mdash; including iOS, WatchOS, server, and more! ...</h6>
-                                    <hr />
-                                    <h6><a class="plr-20 btn-brdr-grey color-md-black" href="/posts/hello-world.html"><b>Continue Reading</b></a></h6>
-                                </div><!-- mx-w-200x -->
-                            </div><!-- dplay-tbl-cell -->
-                        </div><!-- dplay-tbl -->
-                    </div><!-- col-sm-6 -->
-                </div><!-- row -->
-            </div><!-- container -->
-        </div><!-- slider-main -->
-        
-        
-        <section class="bg-1-white ptb-0">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-1"></div>
-                    <div class="col-md-12 col-lg-8 ptb-50 pr-30 pr-md-15">
-                        <h4 class="mb-30 mt-20 clearfix"><b>Recent Posts</b></h4>
-                        <div class="row">
-                            <!-- Cards with Image Background -->
-                            <!-- Card -->
-                            <div class="col-sm-6 col-md-6 col-lg-6 col-xl-4 mb-30">
-                                <div class="card h-100 pos-relative bg-tag-blog bg-layer-4 color-white">
-                                    <div class="plr-25 ptb-15">
-                                        <h6 class="color-white shadow-grey"><b>BLOG</b></h6>
-                                        <h4 class="mtb-10"><a href="/posts/hello-world.html"><b class="shadow-grey">Hello World</b></a></h4>
-                                        <ul class="list-li-mr-10 color-white shadow-grey">
-                                            <li class="float-right"><i>Feb 20, 2019</i></li>
-                                        </ul>
-                                    </div>
-                                </div><!-- card -->
-                            </div><!-- col-lg-4 col-md-6 -->
-                        </div><!-- row -->
+        <!-- Gradient Transition -->
+        <section class="dark-gradient-section h-100"></section>
+        <!-- Articles-->
+                <section class="articles-section" id="articles">
+            <div class="container">
+                <h2 class="text-black-50 mb-4">Articles</h2>
+                <!-- Featured Project Row-->
+                                <div class="row align-items-center no-gutters mb-4 mb-lg-5">
+                    <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="assets/img/bg-masthead.jpg" alt="" /></div>
+                    <div class="col-xl-4 col-lg-5">
+                        <div class="featured-text text-center text-lg-left">
+                            <h4>Shoreline</h4>
+                            <p class="text-black-50 mb-0">Grayscale is open source and MIT licensed. This means you can use it for any project - even commercial projects! Download it, customize it, and publish your website!</p>
+                        </div>
                     </div>
                 </div>
-            </div><!-- container -->
+                <!-- Project One Row-->
+                                <!-- Image | Article -->
+                <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
+                    <div class="col-lg-6"><img class="img-fluid" src="assets/img/demo-image-01.jpg" alt="" /></div>
+                    <div class="col-lg-6">
+                        <div class="bg-black text-center h-100 articles">
+                            <div class="d-flex h-100">
+                                <div class="articles-text w-100 my-auto text-center text-lg-left">
+                                    <h4 class="text-white">Misty</h4>
+                                    <p class="mb-0 text-white-50">An example of where you can put an image of a project, or anything else, along with a description.</p>
+                                    <hr class="d-none d-lg-block mb-0 ml-0" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Two Row-->
+                                <!-- Article | Image -->
+                <div class="row justify-content-center no-gutters">
+                    <div class="col-lg-6"><img class="img-fluid" src="assets/img/demo-image-02.jpg" alt="" /></div>
+                    <div class="col-lg-6 order-lg-first">
+                        <div class="bg-black text-center h-100 articles">
+                            <div class="d-flex h-100">
+                                <div class="articles-text w-100 my-auto text-center text-lg-right">
+                                    <h4 class="text-white">Mountains</h4>
+                                    <p class="mb-0 text-white-50">Another example of a project with its respective description. These sections work well responsively as well, try this theme on a small screen!</p>
+                                    <hr class="d-none d-lg-block mb-0 mr-0" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
-        <footer class="bg-191 color-ash pt-50 pb-20 text-left center-sm-text">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-1"></div>
-                    <div class="col-md-4 col-lg-6 mb-30">
-                        <div class="card h-100">
-                            <div class="dplay-tbl">
-                                <div class="dplay-tbl-cell">
-                                    <!-- TODO: (TL) Add something interesting here -->
-                                    <p class="color-ash"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ion-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-                                </div><!-- dplay-tbl-cell -->
-                            </div><!-- dplay-tbl -->
-                        </div><!-- card -->
-                    </div><!-- col-lg-4 col-md-6 -->
+        <!-- Projects-->
+                <section class="projects-section" id="projects">
+            <div class="container">
+                <h2 class="text-black-50 mb-4">Projects</h2>
+                                <div class="row">
                     
-                    <div class="col-md-4 col-lg-2 mb-30">
-                        <div class="card h-100">
-                            <div class="dplay-tbl">
-                                <div class="dplay-tbl-cell">
-                                
-                                    <ul class="list-a-plr-10">
-                                        <li><a href="https://github.com/RndmTsk"><i class="ion-social-github"></i></a></li>
-                                        <li><a href="https://twitter.com/terrylatanville"><i class="ion-social-twitter"></i></a></li>
-                                        <li><a href="https://www.linkedin.com/in/terrylatanville"><i class="ion-social-linkedin"></i></a></li>
-                                    </ul>
-                                </div><!-- dplay-tbl-cell -->
-                            </div><!-- dplay-tbl -->
-                        </div><!-- card -->
-                    </div><!-- col-lg-4 col-md-6 -->
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fab fa-github"></i>
+                                <h4 class="text-uppercase m-0"><a href="https://github.com/RndmTsk/GLSLVisualizer-iOS">Sample Title</a></h4>
+                                <hr class="my-4" />
+                                <div class="small text-black-60">Learning</div>
+                                <div class="small text-black-50"><b>Objective-COpenGL</b></div>
+                            </div>
+                        </div>
+                    </div>
                     
-                </div><!-- row -->
-            </div><!-- container -->
-        </footer>
-        <!-- SCIPTS -->
-        <script src="/plugin-frameworks/jquery-3.2.1.min.js"></script>
-        <script src="/plugin-frameworks/bootstrap.min.js"></script>
-        <script src="/plugin-frameworks/swiper.js"></script>
-        <script src="/common/scripts.js"></script>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fab fa-github"></i>
+                                <h4 class="text-uppercase m-0"><a href=""></a></h4>
+                                <hr class="my-4" />
+                                <div class="small text-black-60"></div>
+                                <div class="small text-black-50"><b></b></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fab fa-github"></i>
+                                <h4 class="text-uppercase m-0"><a href=""></a></h4>
+                                <hr class="my-4" />
+                                <div class="small text-black-60"></div>
+                                <div class="small text-black-50"><b></b></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="spacer"></div>
+            </div>
+        </section>
+        <!-- Footer -->
+                <!-- Contact-->
+        <section class="contact-section bg-black">
+            <div class="social d-flex justify-content-center">
+                <a class="mx-2" href="https://twitter.com/terrylatanville"><i class="fab fa-twitter"></i></a>
+                <a class="mx-2" href="https://github.com/rndmtsk"><i class="fab fa-github"></i></a>
+            </div>            
+        </section>
+        <!-- Footer-->
+        <footer class="footer bg-black small text-center text-white-50"><div class="container">Copyright © Terry Latanville 2020</div></footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
     </body>
 </html>
