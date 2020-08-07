@@ -39,7 +39,7 @@ extension Project: MustacheBoxable {
             "title": title,
             "url": url,
             "tagline": tagline,
-            "languages": languages
+            "languages": languages.joined(separator: ", ")
         ])
     }
 }

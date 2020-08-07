@@ -6,9 +6,11 @@
 //
 
 import Foundation
+import Mustache
 
 struct Article: Codable  {
     let title: String
+    let intro: String = "An example of where you can put an image of a project, or anything else, along with a description." // TODO: (TL) Remove this
     let date: Date
     let content: String
     let tags: [String]
@@ -28,5 +30,20 @@ extension Article: Exportable {
         case .json: return "./data-articles"
         case .html: return "./articles"
         }
+    }
+}
+
+// MARK: - <MustacheBoxable>
+extension Article: MustacheBoxable {
+    var mustacheBox: MustacheBox {
+        Box([
+            "title": title,
+            "intro": intro,
+            "date": DateFormatter.localizedString(from: date,
+                                                  dateStyle: .long,
+                                                  timeStyle: .none),
+            "content": content,
+            "tags": tags
+        ])
     }
 }

@@ -1,11 +1,10 @@
-        <section class="articles-section" id="articles">
+<section class="articles-section" id="articles">
             <div class="container">
                 <h2 class="text-black-50 mb-4">Articles</h2>
-                <!-- Featured Project Row-->
-                {{> index-article-featured }}
-                <!-- Project One Row-->
-                {{> index-article-image-text }}
-                <!-- Project Two Row-->
-                {{> index-article-text-image }}
+                <!-- Featured Project Row-->{{> index-article-featured }}
+                <!-- Additional Project Row-->
+                {{# secondarticle }}{{> index-article-image-text }}{{/ secondarticle }}
+                <!-- Additional Project Row-->
+                {{# thirdarticle }}{{> index-article-text-image }}{{/ thirdarticle }}
             </div>
         </section>

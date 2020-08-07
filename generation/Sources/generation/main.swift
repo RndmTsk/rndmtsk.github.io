@@ -16,8 +16,12 @@ func performAction(for command: String, with context: ArraySlice<String>) throws
 
 // MARK: - Main
 struct Generation: ParsableCommand {
+    enum Errors: Error {
+        case invalidArgument
+    }
     public static let configuration = CommandConfiguration(abstract: "A Swift command-line tool to manage static site generation",
-                                                           subcommands: [SiteCommand.self, ArticleCommand.self, ProjectCommand.self])
+                                                           subcommands: [SiteCommand.self,
+                                                                         TemplateCommand.self])
     init() {}
 }
 
@@ -32,22 +36,23 @@ struct SiteCommand: ParsableCommand {
     }
 }
 
-struct ArticleCommand: ParsableCommand {
-    public static let configuration = CommandConfiguration(commandName: "article",
-                                                           abstract: "Generates an article template")
-    func run() throws {
-        try Article
-            .template
-            .export(as: .json)
-    }
-}
+struct TemplateCommand: ParsableCommand {
+    public static let configuration = CommandConfiguration(commandName: "template",
+                                                           abstract: "Generates a new sample of the specified type")
+    @Argument(help: "The type of template to generate, options available: 'article', 'project'")
+    var type: String
 
-struct ProjectCommand: ParsableCommand {
-    public static let configuration = CommandConfiguration(commandName: "project",
-                                                           abstract: "Generates a project template")
     func run() throws {
-        try Project
-            .template
-            .export(as: .json)
+        if type == "article" {
+            try Article
+                .template
+                .export(as: .json)
+        } else if type == "project" {
+            try Project
+                .template
+                .export(as: .json)
+        } else {
+            throw Generation.Errors.invalidArgument
+        }
     }
 }
