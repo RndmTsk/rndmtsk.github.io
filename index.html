@@ -3,10 +3,13 @@
         <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
+        <meta name="description" content="My development portfolio with some development tips and tricks mixed in for flavour." />
+        <meta name="author" content="Terry Latanville" />
         <title>terry.latanville.ca</title>
-        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+        <link rel="icon" href="assets/img/favicon.svg" />
+        <link rel="mask-icon" href="assets/img/mask-icon.svg" color="#000000" />
+        <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+        <link rel="manifest" href="manifest.json" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
@@ -36,61 +39,36 @@
         <header class="masthead">
             <div class="container d-flex h-100 align-items-center">
                 <div class="mx-auto text-center">
-                    <h2 class="text-black-50 mx-auto mt-2 mb-5">"This is an example quote"</h2>
+                    <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel" data-interval="10000">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active"><h2 class="text-black-50 mx-auto mt-2 mb-5">&quot;Test snippet 1&quot;</h2></div>
+                            <div class="carousel-item"><h2 class="text-black-50 mx-auto mt-2 mb-5">&quot;Test snippet 2&quot;</h2></div>
+                            <div class="carousel-item"><h2 class="text-black-50 mx-auto mt-2 mb-5">&quot;Test snippet 3&quot;</h2></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </header>
+
         <!-- Gradient Transition -->
         <section class="dark-gradient-section h-100"></section>
         <!-- Articles-->
         <section class="articles-section" id="articles">
             <div class="container">
                 <h2 class="text-black-50 mb-4">Articles</h2>
-                <!-- Featured Project Row-->                
-                <div class="row align-items-center no-gutters mb-4 mb-lg-5">
-                    <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="assets/img/bg-masthead.jpg" alt="" /></div>
-                    <div class="col-xl-4 col-lg-5">
-                        <div class="featured-text text-center text-lg-left">
-                            <h4>Sample Title</h4>
-                            <p class="article-date">July 31, 2020</p>
-                            <p class="text-black-50 mb-0">An example of where you can put an image of a project, or anything else, along with a description.</p>
-                        </div>
-                    </div>
-                </div>
+                <!-- Featured Project Row--><h1>Swift Basics: Constants and Variables</h1><p>An intro to the Swift programming language with a tour through basic concepts including <a href="#Glossary"><em>variable</em></a> and <em>constant</em> <em>declarations</em>.</p><h4><em>Constants</em> and <em>Variables</em></h4><p>Using the <code>var</code> or <code>let</code> <em>keyword</em> tells your program: “Please set aside some space, I’d like to remember something for later”. If you use <code>var</code> you’re saying: “This space will be used for a few different values as my program changes”, also known as a <em>variable</em>. Using <code>let</code> says: “This space will only ever have one specific value, it will not change”, another name for this is a <em>constant</em>.</p><h4>Naming</h4><p>Whether you’re using a <em>constant</em> or a <em>variable</em>, you need to give it a <em>name</em> if you want to use the value later in your program. Names have a few rules, like “You can’t have a <em>constant</em> or <em>variable</em> start with a number” but are otherwise pretty flexible, remember: if you don’t give it a name, why <em>declare</em> it in the first place?</p><h4><em>Types</em></h4><p>Now that you’ve decided on a <em>constant</em> or <em>variable</em> and given it a <em>name</em>, it’s time to decide exactly what will be stored inside.</p><p>Swift has many different <em>types</em> included to get you started, here are some of the more common ones:</p><ul><li>String: A collection of letters, numbers, punctuation, and more all stuffed between two quotation marks (“)</li><li>Int: Any number you can think of that’s bigger than -9223372036854775808 and smaller than 922337203685477580. While that may be a lot, notice that you can’t add a decimal place, not a very good choice for handling your loose change!</li><li>Double: Any number you can think of that’s bigger than 0.0... (continue typing “0” 306 times!)…2 and smaller than 1… (continue typing numbers 306 more times!)…0, wow!</li></ul><h4><em>Assignment</em></h4><p>Simply saying that you have a <code>String</code> or an <code>Int</code> doesn't tell Swift which value you're actually storing. Setting or updating a value in your <em>variable</em> is also known as <em>assignment</em>.</p><h4><em>Declarations</em></h4><p>Putting it all together, it looks like this:</p><pre><code><span class="keyword">let</span> myString: <span class="type">String</span> = <span class="string">"Hello World"</span>
+<span class="comment">// A CONSTANT of TYPE String, with the VALUE 'Hello World'</span>
+
+<span class="keyword">var</span> myInt: <span class="type">Int</span> = <span class="number">42</span>
+<span class="comment">// A VARIABLE of TYPE Int, with the value '42'</span>
+
+<span class="keyword">let</span> myDouble: <span class="type">Double</span> = <span class="number">2.71828</span>
+<span class="comment">// A CONSTANT of TYPE Double, with the VALUE '2.71828'</span>
+</code></pre><h2>Glossary</h2><ul><li><strong>keyword</strong>: A word that is recognized as having special meaning to Swift. Examples include: <code>for</code>, <code>let</code>, <code>in</code>, and <code>if</code>.</li><li><strong>variable</strong>: TODO</li><li><strong>constant</strong>: TODO</li><li><strong>name</strong>: TODO</li><li><strong>declare</strong>: TODO</li><li><strong>type</strong>: TODO</li><li><strong>declaration</strong>: TODO</li><li><strong>assignment</strong>: TODO</li></ul><h3>References</h3><ol><li><a href="https://docs.swift.org/swift-book/GuidedTour/GuidedTour.html">A Swift Tour</a></li><li><a href="https://books.apple.com/us/book/intro-to-app-development-with-swift/id1118575552">Intro to App Development with Swift</a></li><li><a href="https://books.apple.com/us/book/develop-in-swift-fundamentals/id1511184145">Develop in Swift Fundamentals</a></li></ol>
                 <!-- Additional Project Row-->
-                <!-- Image | Article -->
-                <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
-                    <div class="col-lg-6"><img class="img-fluid" src="assets/img/demo-image-01.jpg" alt="" /></div>
-                    <div class="col-lg-6">
-                        <div class="bg-black text-center h-100 articles">
-                            <div class="d-flex h-100">
-                                <div class="articles-text w-100 my-auto text-center text-lg-left">
-                                    <h4 class="text-white">Sample Title</h4>
-                                    <p class="article-date text-white-50">July 31, 2020</p>
-                                    <p class="mb-0 text-white-50">An example of where you can put an image of a project, or anything else, along with a description.</p>
-                                    <hr class="d-none d-lg-block mb-0 ml-0" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <h1>Sample Title</h1><p>Sample Article content.</p>
                 <!-- Additional Project Row-->
-                <!-- Article | Image -->
-                <div class="row justify-content-center no-gutters">
-                    <div class="col-lg-6"><img class="img-fluid" src="assets/img/demo-image-02.jpg" alt="" /></div>
-                    <div class="col-lg-6 order-lg-first">
-                        <div class="bg-black text-center h-100 articles">
-                            <div class="d-flex h-100">
-                                <div class="articles-text w-100 my-auto text-center text-lg-right">
-                                    <h4 class="text-white">Sample Title</h4>
-                                    <p class="article-date text-white-50">July 31, 2020</p>
-                                    <p class="mb-0 text-white-50">An example of where you can put an image of a project, or anything else, along with a description.</p>
-                                    <hr class="d-none d-lg-block mb-0 mr-0" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </section>
         <!-- Projects-->
@@ -102,10 +80,43 @@
                         <div class="card py-4 h-100">
                             <div class="card-body text-center">
                                 <i class="fab fa-github"></i>
+                                <h4 class="text-uppercase m-0"><a href="https://github.com/RobotDisco/mattermost-bagel">Bagel</a></h4>
+                                <hr class="my-4" />
+                                <div class="small text-black-60">Coffee Bot</div>
+                                <div class="small text-black-50"><b>Go</b></div>
+                            </div>
+                        </div>
+                    </div><div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fab fa-github"></i>
                                 <h4 class="text-uppercase m-0"><a href="https://github.com/RndmTsk/exercism">Exercism</a></h4>
                                 <hr class="my-4" />
                                 <div class="small text-black-60">Algorithms and Learning</div>
                                 <div class="small text-black-50"><b>Swift, C, C++</b></div>
+                            </div>
+                        </div>
+                    </div><div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fab fa-github"></i>
+                                <h4 class="text-uppercase m-0"><a href="https://github.com/RndmTsk/Starlight">Starlight</a></h4>
+                                <hr class="my-4" />
+                                <div class="small text-black-60">2D Sidescroller</div>
+                                <div class="small text-black-50"><b>Swift, SpriteKit</b></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="spacer"></div><div class="row">
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fab fa-github"></i>
+                                <h4 class="text-uppercase m-0"><a href="https://github.com/RndmTsk/SwiftUITicTacToe">Tic Tac Toe</a></h4>
+                                <hr class="my-4" />
+                                <div class="small text-black-60">SwiftUI Tic Tac Toe</div>
+                                <div class="small text-black-50"><b>Swift, SwiftUI</b></div>
                             </div>
                         </div>
                     </div><div class="col-md-4 mb-3 mb-md-0">
@@ -122,10 +133,33 @@
                         <div class="card py-4 h-100">
                             <div class="card-body text-center">
                                 <i class="fab fa-github"></i>
+                                <h4 class="text-uppercase m-0"><a href="https://github.com/RndmTsk/rndmtsk.github.io/tree/master/generation">Generation</a></h4>
+                                <hr class="my-4" />
+                                <div class="small text-black-60">Website Generator</div>
+                                <div class="small text-black-50"><b>Swift, Mustache</b></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="spacer"></div><div class="row">
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fab fa-github"></i>
                                 <h4 class="text-uppercase m-0"><a href="https://github.com/RndmTsk/SwiftMySQLClient">MySQL Client</a></h4>
                                 <hr class="my-4" />
                                 <div class="small text-black-60">MySQL Driver</div>
                                 <div class="small text-black-50"><b>Swift, SQL</b></div>
+                            </div>
+                        </div>
+                    </div><div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fab fa-github"></i>
+                                <h4 class="text-uppercase m-0"><a href="https://github.com/RndmTsk/SwAnki">SwAnki</a></h4>
+                                <hr class="my-4" />
+                                <div class="small text-black-60">Swift Anki SDK</div>
+                                <div class="small text-black-50"><b>Swift</b></div>
                             </div>
                         </div>
                     </div>
@@ -139,7 +173,7 @@
                 <h2 class="text-white-50 mb-4">Apps</h2>
                 <div class="d-flex justify-content-center">
                     <ul>
-                        <li><img src="assets/img/er-mapper.png" /></li>
+                        <li><a href="https://apps.apple.com/ca/app/er-mapper/id1200334898"><img src="assets/img/er-mapper.png" /></a></li>
                         <li><h6 class="text-white-50 mb-4">ER Mapper</h6></li>
                     </ul>
                 </div>
@@ -148,14 +182,17 @@
         <!-- Footer -->
         <!-- Contact-->
         <section class="contact-section bg-black">
-            <div class="social d-flex justify-content-center">
+            <div class="social-dark d-flex justify-content-center">
                 <a class="mx-2" href="https://twitter.com/terrylatanville"><i class="fab fa-twitter"></i></a>
                 <a class="mx-2" href="https://github.com/rndmtsk"><i class="fab fa-github"></i></a>
-                <a class="mx-2" href="https://https://apps.apple.com/ca/developer/terry-latanville/id1200334897"><i class="fab fa-app-store-ios"></i></a>
+                <a class="mx-2" href="https://apps.apple.com/ca/developer/terry-latanville/id1200334897"><i class="fab fa-app-store-ios"></i></a>
             </div>            
         </section>
         <!-- Footer-->
-        <footer class="footer bg-black small text-center text-white-50"><div class="container">Copyright © Terry Latanville 2020</div></footer>
+        <footer class="footer bg-black small text-center text-white-50">
+            <div class="container">Copyright © Terry Latanville <script>document.write(new Date().getFullYear());</script></div>
+            <div class="container">All Rights Reserved</div>
+        </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
@@ -165,3 +202,4 @@
         <script src="js/scripts.js"></script>
     </body>
 </html>
+

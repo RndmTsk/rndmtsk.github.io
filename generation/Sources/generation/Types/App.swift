@@ -11,20 +11,20 @@ import Mustache
 struct App: Codable {
     let title: String
     let icon: String
-
-    static var template: App {
-        App(title: "Sample App",
-            icon: "sample-app.png")
-    }
+    let url: String
 }
 
 // MARK: - <Exportable>
 extension App: Exportable {
-    static func path(for format: ExportFormat) -> String {
-        switch format {
-        case .json: return "./data-apps"
-        case .html: return "./apps"
-        }
+    static var preferredRawFormat: Format { .json }
+}
+
+// MARK: - <Templatable>
+extension App: Templatable {
+    static var template: Exportable {
+        App(title: "Sample App",
+            icon: "sample-app.png",
+            url: "https://apps.apple.com/ca/app/er-mapper/id1200334898")
     }
 }
 
@@ -33,7 +33,8 @@ extension App: MustacheBoxable {
     var mustacheBox: MustacheBox {
         Box([
             "title": title,
-            "icon": icon
+            "icon": icon,
+            "url": url
         ])
     }
 }

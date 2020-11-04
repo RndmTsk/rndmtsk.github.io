@@ -1,19 +1,6 @@
 import Foundation
 import ArgumentParser
 
-/* Former command
-func performAction(for command: String, with context: ArraySlice<String>) throws {
-    if let exportableType = command.exportableType {
-        try exportableType.init(context: context).export(as: .json)
-    } else if command == "website" {
-        try Website().export()
-    } else {
-        printUsage(2)
-    }
-}
-*/
-
-
 // MARK: - Main
 struct Generation: ParsableCommand {
     enum Errors: Error {
@@ -43,16 +30,17 @@ struct TemplateCommand: ParsableCommand {
     var type: String
 
     func run() throws {
-        if type == "article" {
-            try Article
-                .template
-                .export(as: .json)
-        } else if type == "project" {
-            try Project
-                .template
-                .export(as: .json)
-        } else {
+        let exportable: Exportable
+        switch type {
+        case "article":
+            exportable = Article.template
+        case "project":
+            exportable = Project.template
+        case "app":
+            exportable = App.template
+        default:
             throw Generation.Errors.invalidArgument
         }
+        try exportable.export()
     }
 }

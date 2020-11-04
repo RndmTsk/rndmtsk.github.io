@@ -13,22 +13,20 @@ struct Project: Codable {
     let url: String
     let tagline: String
     let languages: [String]
-
-    static var template: Project {
-        Project(title: "Sample Title",
-                url: "https://github.com/RndmTsk/GLSLVisualizer-iOS",
-                tagline: "Learning",
-                languages: ["Objective-C", "OpenGL"])
-    }
 }
 
 // MARK: - <Exportable>
 extension Project: Exportable {
-    static func path(for format: ExportFormat) -> String {
-        switch format {
-        case .json: return "./data-projects"
-        case .html: return "./projects"
-        }
+    static var preferredRawFormat: Format { .json }
+}
+
+// MARK: - <Templatable>
+extension Project: Templatable {
+    static var template: Exportable {
+        Project(title: "Sample Title",
+                url: "https://github.com/RndmTsk/GLSLVisualizer-iOS",
+                tagline: "Learning",
+                languages: ["Objective-C", "OpenGL"])
     }
 }
 

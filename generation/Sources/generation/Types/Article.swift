@@ -10,26 +10,25 @@ import Mustache
 
 struct Article: Codable  {
     let title: String
-    let intro: String = "An example of where you can put an image of a project, or anything else, along with a description." // TODO: (TL) Remove this
+    let intro: String
     let date: Date
     let content: String
     let tags: [String]
-
-    static var template: Article {
-        Article(title: "Sample Title",
-                date: Date(),
-                content: "Sample article content.",
-                tags: ["sample", "article", "todo"])
-    }
 }
 
 // MARK: - <Exportable>
 extension Article: Exportable {
-    static func path(for format: ExportFormat) -> String {
-        switch format {
-        case .json: return "./data-articles"
-        case .html: return "./articles"
-        }
+    static var preferredRawFormat: Format { .markdown }
+}
+
+// MARK: - <Templatable>
+extension Article: Templatable {
+    static var template: Exportable {
+        Article(title: "Sample Title",
+                intro: "An example of where you can put an image of a project, or anything else, along with a description.",
+                date: Date(),
+                content: "Sample article content.",
+                tags: ["sample", "article", "todo"])
     }
 }
 
