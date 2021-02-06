@@ -38,13 +38,18 @@
         <!-- Masthead-->
         <header class="masthead">
             <div class="container d-flex h-100 align-items-center">
-                <div class="mx-auto text-center">
-                    <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel" data-interval="10000">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active"><h2 class="text-black-50 mx-auto mt-2 mb-5">&quot;Test snippet 1&quot;</h2></div>
-                            <div class="carousel-item"><h2 class="text-black-50 mx-auto mt-2 mb-5">&quot;Test snippet 2&quot;</h2></div>
-                            <div class="carousel-item"><h2 class="text-black-50 mx-auto mt-2 mb-5">&quot;Test snippet 3&quot;</h2></div>
-                        </div>
+                <div class="w-100">
+                    <div class="rounded p-x-1">
+                        <ul class="list-unstyled">
+                            <li>
+                                <i class="fab fa-swift orange-50"></i>
+                                <a href="sample-title.html">Sample Title</a>
+                            <li><li>
+                                <i class="fab fa-swift orange-50"></i>
+                                <a href="swift-basics--constants-and-variables.html">Swift Basics: Constants and Variables</a>
+                            <li>
+
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -52,25 +57,6 @@
 
         <!-- Gradient Transition -->
         <section class="dark-gradient-section h-100"></section>
-        <!-- Articles-->
-        <section class="articles-section" id="articles">
-            <div class="container">
-                <h2 class="text-black-50 mb-4">Articles</h2>
-                <!-- Featured Project Row--><h1>Swift Basics: Constants and Variables</h1><p>An intro to the Swift programming language with a tour through basic concepts including <a href="#Glossary"><em>variable</em></a> and <em>constant</em> <em>declarations</em>.</p><h4><em>Constants</em> and <em>Variables</em></h4><p>Using the <code>var</code> or <code>let</code> <em>keyword</em> tells your program: “Please set aside some space, I’d like to remember something for later”. If you use <code>var</code> you’re saying: “This space will be used for a few different values as my program changes”, also known as a <em>variable</em>. Using <code>let</code> says: “This space will only ever have one specific value, it will not change”, another name for this is a <em>constant</em>.</p><h4>Naming</h4><p>Whether you’re using a <em>constant</em> or a <em>variable</em>, you need to give it a <em>name</em> if you want to use the value later in your program. Names have a few rules, like “You can’t have a <em>constant</em> or <em>variable</em> start with a number” but are otherwise pretty flexible, remember: if you don’t give it a name, why <em>declare</em> it in the first place?</p><h4><em>Types</em></h4><p>Now that you’ve decided on a <em>constant</em> or <em>variable</em> and given it a <em>name</em>, it’s time to decide exactly what will be stored inside.</p><p>Swift has many different <em>types</em> included to get you started, here are some of the more common ones:</p><ul><li>String: A collection of letters, numbers, punctuation, and more all stuffed between two quotation marks (“)</li><li>Int: Any number you can think of that’s bigger than -9223372036854775808 and smaller than 922337203685477580. While that may be a lot, notice that you can’t add a decimal place, not a very good choice for handling your loose change!</li><li>Double: Any number you can think of that’s bigger than 0.0... (continue typing “0” 306 times!)…2 and smaller than 1… (continue typing numbers 306 more times!)…0, wow!</li></ul><h4><em>Assignment</em></h4><p>Simply saying that you have a <code>String</code> or an <code>Int</code> doesn't tell Swift which value you're actually storing. Setting or updating a value in your <em>variable</em> is also known as <em>assignment</em>.</p><h4><em>Declarations</em></h4><p>Putting it all together, it looks like this:</p><pre><code><span class="keyword">let</span> myString: <span class="type">String</span> = <span class="string">"Hello World"</span>
-<span class="comment">// A CONSTANT of TYPE String, with the VALUE 'Hello World'</span>
-
-<span class="keyword">var</span> myInt: <span class="type">Int</span> = <span class="number">42</span>
-<span class="comment">// A VARIABLE of TYPE Int, with the value '42'</span>
-
-<span class="keyword">let</span> myDouble: <span class="type">Double</span> = <span class="number">2.71828</span>
-<span class="comment">// A CONSTANT of TYPE Double, with the VALUE '2.71828'</span>
-</code></pre><h2>Glossary</h2><ul><li><strong>keyword</strong>: A word that is recognized as having special meaning to Swift. Examples include: <code>for</code>, <code>let</code>, <code>in</code>, and <code>if</code>.</li><li><strong>variable</strong>: TODO</li><li><strong>constant</strong>: TODO</li><li><strong>name</strong>: TODO</li><li><strong>declare</strong>: TODO</li><li><strong>type</strong>: TODO</li><li><strong>declaration</strong>: TODO</li><li><strong>assignment</strong>: TODO</li></ul><h3>References</h3><ol><li><a href="https://docs.swift.org/swift-book/GuidedTour/GuidedTour.html">A Swift Tour</a></li><li><a href="https://books.apple.com/us/book/intro-to-app-development-with-swift/id1118575552">Intro to App Development with Swift</a></li><li><a href="https://books.apple.com/us/book/develop-in-swift-fundamentals/id1511184145">Develop in Swift Fundamentals</a></li></ol>
-                <!-- Additional Project Row-->
-                <h1>Sample Title</h1><p>Sample Article content.</p>
-                <!-- Additional Project Row-->
-                
-            </div>
-        </section>
         <!-- Projects-->
         <section class="projects-section" id="projects">
             <div class="container">

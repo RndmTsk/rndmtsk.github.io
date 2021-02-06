@@ -10301,6 +10301,31 @@ body {
   max-width: 20rem;
   font-size: 1rem;
 }
+
+.masthead li {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10pt;
+  margin: 2pt;
+}
+
+.masthead a {
+  color: rgba(255, 255, 255, 255);
+}
+
+.masthead a:hover {
+  color: rgba(255, 255, 255, 255);
+}
+
+.masthead a {
+  padding: 0 8pt;
+  font-family: "Varela Round";
+  font-size: 2.5rem;
+}
+
+.masthead svg {
+  font-size: 2.5rem;
+}
+
 @media (min-width: 768px) {
   .masthead h1 {
     font-size: 4rem;
@@ -10446,10 +10471,15 @@ body {
   border-radius: 100%;
   line-height: 3rem;
 }
-.contact-section-dark .social a:hover {
+
+.contact-section .social-dark a {
+  color: rgba(255, 255, 255, 1);
+}
+
+.contact-section .social-dark a:hover {
   color: rgba(255, 255, 255, 0.5);
 }
-.contact-section-dark .social a:active {
+.contact-section .social-dark a:active {
   color: rgba(255, 255, 255, 0.5);
 }
 
@@ -10461,6 +10491,11 @@ body {
   border-radius: 100%;
   line-height: 3rem;
 }
+
+.contact-section .social-light a {
+  color: rgba(0, 0, 0, 1);
+}
+
 .contact-section .social-light a:hover {
   color: rgba(0, 0, 0, 0.5);
 }

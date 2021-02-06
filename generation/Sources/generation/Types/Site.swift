@@ -19,9 +19,7 @@ extension TemplateKey {
     static let project = "project"
     static let projects = "projects"
     static let apps = "apps"
-    static let codeSnippet1 = "code-snippet-1"
-    static let codeSnippet2 = "code-snippet-2"
-    static let codeSnippet3 = "code-snippet-3"
+    static let articles = "articles"
 }
 
 struct Site {
@@ -56,17 +54,20 @@ struct Site {
     // MARK: - HTML Writing
     static func export() throws {
         // TODO: (TL) This is very much brute force and inelegant
-        let articles = try markdownToHTML(Article.self)
+        // let articlesHTML = try markdownToHTML(Article.self)
+        let articleLinks: [ArticleLink] = [
+            .init(title: "Sample Title"),
+            .init(title: "Swift Basics: Constants and Variables")
+        ]
         let projects = try jsonDecodeAll(Project.self)
         let apps = try jsonDecodeAll(App.self)
 
         let indexTemplate = try Template(path: "./mustache/index.mustache")
-        configure(articles, in: indexTemplate)
+        // configure(articles, in: indexTemplate)
         configure(projects, in: indexTemplate)
         indexTemplate.register(apps, forKey: .apps)
-        indexTemplate.register("\"Test snippet 1\"", forKey: .codeSnippet1)
-        indexTemplate.register("\"Test snippet 2\"", forKey: .codeSnippet2)
-        indexTemplate.register("\"Test snippet 3\"", forKey: .codeSnippet3)
+        // TODO: (TL) Articles are in Markdown which makes it hard to turn it into a Swift type
+        indexTemplate.register(articleLinks, forKey: .articles)
 
         let rendering = try indexTemplate.render()
         // let file = URL(fileURLWithpath: "../index.html")

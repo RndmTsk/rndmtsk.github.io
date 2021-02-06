@@ -8,12 +8,39 @@
 import Foundation
 import Mustache
 
+struct ArticleLink: MustacheBoxable {
+    let title: String
+    var link: String {
+        (title
+            .lowercased()
+            .replacingOccurrences(of: " ", with: "-")
+            .replacingOccurrences(of: ":", with: "-")
+            .addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ??
+            "article-\(title.hash)").appending(".html")
+    }
+
+    var mustacheBox: MustacheBox {
+        Box([
+            "title": title,
+            "link": link
+        ])
+    }
+}
+
 struct Article: Codable  {
     let title: String
     let intro: String
     let date: Date
     let content: String
     let tags: [String]
+
+    var link: String {
+        (title
+            .lowercased()
+            .replacingOccurrences(of: " ", with: "-")
+            .addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ??
+            "article-\(title.hash)").appending(".html")
+    }
 }
 
 // MARK: - <Exportable>
@@ -42,7 +69,8 @@ extension Article: MustacheBoxable {
                                                   dateStyle: .long,
                                                   timeStyle: .none),
             "content": content,
-            "tags": tags
+            "tags": tags,
+            "link": link
         ])
     }
 }
