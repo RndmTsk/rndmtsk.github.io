@@ -14,7 +14,7 @@ struct App: Codable {
     let url: String
 }
 
-// MARK: - <Exportable>
+// MARK: - <RawFormatRepresentable>
 extension App: Exportable {
     static var preferredRawFormat: Format { .json }
 }

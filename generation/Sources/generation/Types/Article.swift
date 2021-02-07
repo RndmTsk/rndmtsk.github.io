@@ -8,8 +8,16 @@
 import Foundation
 import Mustache
 
-struct ArticleLink: MustacheBoxable {
+struct Article: Codable {
     let title: String
+    let topic: String
+    let content: String
+
+//    let intro: String
+//    let date: Date
+//    let content: String
+//    let tags: [String]
+
     var link: String {
         (title
             .lowercased()
@@ -18,28 +26,21 @@ struct ArticleLink: MustacheBoxable {
             .addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ??
             "article-\(title.hash)").appending(".html")
     }
-
-    var mustacheBox: MustacheBox {
-        Box([
-            "title": title,
-            "link": link
-        ])
-    }
 }
 
-struct Article: Codable  {
-    let title: String
-    let intro: String
-    let date: Date
-    let content: String
-    let tags: [String]
+extension Article: Importable {
+    init(filename: String, content: String) {
+        let fileURL = URL(string: filename)!
+        let title = fileURL.lastPathComponent
+            .replacingOccurrences(of: fileURL.pathExtension, with: "")
+            .replacingOccurrences(of: "-", with: " ")
+            .replacingOccurrences(of: ".", with: "")
+            .capitalized
 
-    var link: String {
-        (title
-            .lowercased()
-            .replacingOccurrences(of: " ", with: "-")
-            .addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ??
-            "article-\(title.hash)").appending(".html")
+        // TODO: (TL) add icon or something based on base path (e.g. Swift root directory)
+        self.init(title: title.removingPercentEncoding ?? title,
+                  topic: "Swift",
+                  content: content)
     }
 }
 
@@ -52,10 +53,8 @@ extension Article: Exportable {
 extension Article: Templatable {
     static var template: Exportable {
         Article(title: "Sample Title",
-                intro: "An example of where you can put an image of a project, or anything else, along with a description.",
-                date: Date(),
-                content: "Sample article content.",
-                tags: ["sample", "article", "todo"])
+                topic: "Swift",
+                content: "An example of where you can put an image of a project, or anything else, along with a description.")
     }
 }
 
@@ -64,12 +63,8 @@ extension Article: MustacheBoxable {
     var mustacheBox: MustacheBox {
         Box([
             "title": title,
-            "intro": intro,
-            "date": DateFormatter.localizedString(from: date,
-                                                  dateStyle: .long,
-                                                  timeStyle: .none),
+            "topic": topic,
             "content": content,
-            "tags": tags,
             "link": link
         ])
     }
